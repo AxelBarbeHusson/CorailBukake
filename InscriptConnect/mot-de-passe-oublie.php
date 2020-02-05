@@ -19,7 +19,7 @@ if (!empty($_POST['submitted'])){
     if (!empty($user)){
         $token = $user['token'];
         $email = urlencode($email);
-        $html = '<a href="modif-mot-de-passe.php?email=' . $email . '&token=' . $token . '">Cliquez ici mon modifier votre mot de passe</a>';
+        $html = '<a href="modif-mot-de-passe.php?email=' . $email . '&token=' . $token . '">Cliquez ici pour modifiez votre mot de passe</a>';
 
     } else {
         $errors['email'] = 'Mauvais mot de passe';
@@ -42,7 +42,7 @@ include('inc/header.php'); ?>
 
             <input type="submit" name="submitted" value="Modifier mon mot de passe">
         </form>
-        <?php if (!empty($_POST['submitted'])){ echo $html; }?>
+        <?php if (empty($_POST['submitted'])){ echo $html; }?>
         <div class="clear"></div>
     </div>
 <?php include('inc/footer.php');

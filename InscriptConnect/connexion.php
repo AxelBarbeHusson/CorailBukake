@@ -55,8 +55,12 @@ include('inc/header.php'); ?>
                 } ?></p>
 
             <label for="password">Mot de passe : </label>
-            <input type="password" name="password" id="password" value="">
-
+            <input type="password" name="password" id="password" value="<?php if (!empty($_POST['password'])) {
+                echo $_POST['password'];
+            } ?>">
+            <p class="error"><?php if (!empty($errors['password'])) {
+                    echo $errors['password'];
+                } ?></p>
             <input type="submit" name="submitted" value="Connectez vous">
         </form>
         <a href="mot-de-passe-oublie.php"> Mot de passe oublié </a>

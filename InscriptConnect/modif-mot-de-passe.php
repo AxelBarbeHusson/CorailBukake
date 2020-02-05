@@ -63,7 +63,7 @@ include('inc/header.php'); ?>
                 <input type="submit" name="submitted" value="Modifier">
             </form>
         <?php } else {
-            echo 'Error 404';
+            echo '<p>Error 404</p>';
         }
     }
     ?>
